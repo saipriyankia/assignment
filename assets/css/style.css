@@ -1,0 +1,113 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto); /* FREE GOOGLE FONT */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 30px;
+}
+
+.set-radius-zero {
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+.content-wrapper {
+    margin-top: 40px;
+    min-height: 600px;
+    padding-bottom: 60px;
+}
+
+.page-head-line {
+    font-weight: 900;
+    padding-bottom: 20px;
+    border-bottom: 2px solid /*#F0677C*/#038eb7;
+    text-transform: uppercase;
+    color: /*#F0677C*/#038eb7;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+
+/* =============================================================
+   HEADER SECTION STYLES
+ ============================================================ */
+header {
+    background-color: #038eb7/*#F0677C*/;
+    color: #fff;
+    padding: 10px;
+    
+}
+
+
+/* =============================================================
+   FOOTER SECTION STYLES
+ ============================================================ */
+footer {
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    background-color: /*#C36464*/#038eb7;
+}
+
+ 
+/*==============================================
+    DASHBOARD  STYLES    
+ =============================================*/
+
+/* DASHBOARD ICONS */
+
+.bk-clr-one {
+    background-color: #40D2D2;
+}
+.dashboard-div-icon {
+    height: 75px;
+    width: 75px;
+    border: 2px solid #fff;
+    padding: 20px;
+    border-radius: 50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.dashboard-div-wrapper {
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+    .dashboard-div-wrapper .progress {
+        height: 2px;
+    }
+
+
+.error,.error-message{
+	color:#ff0000;
+	font-size: 11px;
+	font-weight:400;
+}
+.form-control{
+	height:31px;
+}
+.page-head-line .col-md-9,.col-md-3{
+	padding-right:0px;
+	padding-left:3px;
+}
+.dashboard-div-wrapper hr{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.form-group .col-md-4{
+	padding-left:0px;
+
+}	
