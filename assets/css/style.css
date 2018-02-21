@@ -111,3 +111,24 @@ footer {
 	padding-left:0px;
 
 }	
+.bk-clr-one input{
+	float:left;
+}
+@media only screen and (min-width: 0px) and (max-width: 990px){
+  .apply-button {
+		width: 30%;
+		text-align: right;
+		top: -31px;
+		right: -62%;
+  }
+  .select-action{
+		width: 70%;
+  }
+  .action{
+		padding-top: 20px;
+		width: 100%;
+  }
+  .page-head-line{
+	  padding-bottom:66px;
+  }
+}
