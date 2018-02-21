@@ -34,10 +34,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Products List 
+                    <h4 class="page-head-line">Products Lists
+						<a href="trash.php" class="btn btn-info btn-sm pull-right">Trash</a>
 						<a href="add-product.php" class="btn btn-primary btn-sm pull-right">Add Product</a>
-						<div class="pull-right col-md-3">
-							<div class="col-md-9">
+						<div class="pull-right col-md-3 action">
+							<div class="col-md-9 select-action">
 								<select class="form-control" id="select_apply">
 									<option value="">Select Action</option>
 									<option value="1">Select All</option>
@@ -45,7 +46,7 @@
 									<option value="3">Mass Delete Action</option>
 								</select>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 apply-button">
 								<button class="btn btn-warning btn-sm" id="check_apply" >Apply</button>
 							</div>
 							
@@ -65,7 +66,7 @@
 				
                  <div class="col-md-3 col-sm-3 col-xs-6">
                     <div class="dashboard-div-wrapper bk-clr-one">
-                        <div><input style="float:left" type="checkbox" value="<?php echo $val['product_id'];?>" name="check_product[]" class="check_product" id="check_product"><?php echo $val['sku'];?></div>
+                        <div><input type="checkbox" value="<?php echo $val['product_id'];?>" name="check_product[]" class="check_product" id="check_product"><?php echo $val['sku'];?></div>
 						<div><?php echo $val['product_name'];?></div>
 						<div>$<?php echo $val['price'];?></div>
                         <hr>
@@ -102,18 +103,6 @@
         </div>
     </footer>
 	<script src="assets/js/jquery.js"></script>
-	<script type="text/javascript">
-		$("#check_apply").click(function(){
-			var val=$('#select_apply').val();
-			if(val==1){
-				$(".check_product").prop('checked', true);
-			}else if(val==2){
-				$(".check_product").prop('checked', false);
-			}else if(val==3){
-				$('#delete_products').submit();
-			}
-			
-		});
-	</script>
+	<script src="assets/js/index-scripts.js"></script>
 </body>
 </html>

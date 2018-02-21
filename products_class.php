@@ -1,18 +1,10 @@
 <?php 
-class products_class{
-	public $host = 'localhost:3333';
-	public $user = 'root';
-	public $password = '';
-	public $database = 'assign_task';
-	public $connection='';
-	public $error_msg='';
+require('db_class.php');
+class products_class extends db_class{
+	
 	/*Constructor for accessing the database connections all over the class*/
 	public function __construct(){
-		$this->connection = new mysqli($this->host,$this->user,$this->password,$this->database);
-		if(!$this->connection){
-			$this->error_msg = 'Unable to connect to the database.';
-			return false;
-		}
+		$this->get_access();
 	}
 	/*Inserting Products*/
 	public function products_save($product_info){
@@ -34,7 +26,18 @@ class products_class{
 	/*Fetching Products List*/
 	public function products_list(){
 		$result = array();
-		$sql="SELECT * FROM `products` order by sort_order asc ";
+		$sql="SELECT * FROM `products` where status=1 order by sort_order asc ";
+		if($fetch= mysqli_query($this->connection,$sql)){
+			while ($row=mysqli_fetch_array($fetch,MYSQLI_ASSOC)){
+				$result[]=$row;
+			}
+		}
+		return $result;
+	}
+	/*Fetching Trash List*/
+	public function trash_list(){
+		$result = array();
+		$sql="SELECT * FROM `products` where status=0 order by sort_order asc ";
 		if($fetch= mysqli_query($this->connection,$sql)){
 			while ($row=mysqli_fetch_array($fetch,MYSQLI_ASSOC)){
 				$result[]=$row;
@@ -53,7 +56,18 @@ class products_class{
 	public function products_delete($products){
 		
 		foreach($products as $key=>$val){
-			$sql="delete from products where product_id=".$val;
+			//$sql="delete from products where product_id=".$val;
+			$sql="update products set status=0 where product_id=".$val;
+			mysqli_query($this->connection,$sql);
+		}
+		return true;
+	}
+	/*Restore Product*/
+	public function products_restore($products){
+		
+		foreach($products as $key=>$val){
+			//$sql="delete from products where product_id=".$val;
+			$sql="update products set status=1 where product_id=".$val;
 			mysqli_query($this->connection,$sql);
 		}
 		return true;
